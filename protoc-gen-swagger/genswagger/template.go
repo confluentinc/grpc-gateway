@@ -19,6 +19,7 @@ import (
 	"github.com/golang/protobuf/proto"
 	pbdescriptor "github.com/golang/protobuf/protoc-gen-go/descriptor"
 	structpb "github.com/golang/protobuf/ptypes/struct"
+
 	"github.com/grpc-ecosystem/grpc-gateway/internal/casing"
 	"github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway/descriptor"
 	swagger_options "github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger/options"
@@ -169,7 +170,6 @@ func nestedQueryParams(message *descriptor.Message, field *descriptor.Field, pre
 				break
 			}
 		}
-
 		param := swaggerParameterObject{
 			Description: desc,
 			In:          "query",
@@ -771,7 +771,6 @@ func renderServices(services []*descriptor.Service, paths swaggerPathsObject, re
 				// Iterate over all the swagger parameters
 				parameters := swaggerParametersObject{}
 				for _, parameter := range b.PathParams {
-
 					var paramType, paramFormat, desc, collectionFormat, defaultValue string
 					var enumNames []string
 					var items *swaggerItemsObject
